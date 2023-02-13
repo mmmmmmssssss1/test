@@ -1,0 +1,300 @@
+@import "normalize.css";
+.wrapper {
+  width: 100%;
+}
+
+.container {
+  max-width: 1040px;
+  padding: 0 20px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.btn {
+  border: 1px solid #ffffff;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0);
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  cursor: pointer;
+}
+
+.title {
+  font-family: "Prata";
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 71px;
+}
+
+.cover {
+  background: rgba(0, 0, 0, 0.85);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.patterns {
+  background: url("../img/Patterns.svg") repeat-y;
+  background-repeat: repeat-y;
+  position: absolute;
+  top: 0;
+  right: -266px;
+  z-index: 3;
+  height: 100%;
+  width: 230px;
+}
+
+/* ---------------------------------------- HEADER ------------------------------------------ */
+
+.header {
+  position: relative;
+  background: url("../img/background/bg.jpg") center/cover no-repeat;
+  height: 722px;
+
+  &__body {
+    padding: 42px 0 159px 0;
+  }
+
+  &__row-up {
+    margin-bottom: 86px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__text {
+    width: 164px;
+    font-family: "Montserrat";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #ffffff;
+  }
+
+  &__lang-btn {
+    > button {
+      opacity: 0.5;
+      padding: 17.5px 40px;
+    }
+  }
+
+  &__title {
+    color: #ffffff;
+    width: 826px;
+    margin-bottom: 40px;
+  }
+
+  &__contact-btn {
+    > button {
+      padding: 24px 40px;
+    }
+  }
+}
+
+/* ------------------------------------------ MAIN ------------------------------------------------- */
+
+/* ------------------ ABOUT BLOCK --------------------- */
+
+.about {
+  &__body {
+    padding: 100px 0;
+  }
+
+  &__title {
+    text-transform: capitalize;
+    color: #000000;
+  }
+
+  &__text {
+    font-family: "Montserrat";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+    color: #000000;
+    margin-top: 20px;
+    max-width: 1000px;
+    width: 100%;
+  }
+}
+
+/* --------------------- DIOCESE BLOCK ----------------------- */
+
+.diocese {
+  position: relative;
+  background: url("../img/background/bg.jpg") center/cover no-repeat;
+  &__body {
+    padding: 100px 0;
+  }
+
+  &__title {
+    text-transform: capitalize;
+    color: #ffffff;
+    margin-bottom: 49px;
+  }
+
+  &__main {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    width: 320px;
+  }
+
+  &__item-img {
+    height: 325px;
+    margin-bottom: 16px;
+    > img {
+      border-radius: 10px;
+    }
+  }
+
+  &__item-title {
+    text-transform: capitalize;
+    font-family: "Prata";
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 41px;
+    color: #ffffff;
+    margin-bottom: 4px;
+  }
+
+  &__item-subtitle {
+    font-family: "Montserrat";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    color: #ffffff;
+    opacity: 0.5;
+  }
+}
+
+/* ------------------- GALLERY BLOCK ----------------- */
+
+.gallery {
+  &__body {
+    padding: 100px 0;
+  }
+
+  &__title {
+    color: #000000;
+    margin-bottom: 40px;
+  }
+
+  &__main {
+    display: grid;
+    width: 1000px;
+    grid-template-columns: repeat(2, minmax(454px, auto));
+    gap: 20px;
+  }
+
+  &__item {
+    width: 490px;
+    height: 454px;
+
+    > img {
+      border-radius: 10px;
+    }
+  }
+}
+
+/* ------------------------------------------- FOOTER ------------------------------------------- */
+
+.footer {
+  position: relative;
+  background: url("../img/background/bg.jpg") center/cover no-repeat;
+  &__body {
+    padding: 100px 0;
+  }
+
+  &__title {
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+  &__location {
+    display: flex;
+  }
+
+  &__location-icon {
+    margin-right: 28px;
+  }
+
+  &__location-text {
+    display: flex;
+    align-items: center;
+    font-family: "Montserrat";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+    color: #ffffff;
+    opacity: 0.5;
+  }
+}
+
+.form {
+  margin-top: 80px;
+
+  &__title {
+    font-family: "Prata";
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 71px;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 75px 150px;
+    gap: 16px;
+
+    > .item {
+      padding: 22px 20px;
+      border: 1px solid #ffffff;
+      font-family: "Montserrat";
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 32px;
+      color: #ffffff;
+
+      &__name {
+        background: url("../img/icons/Name.svg") 20px 50% no-repeat;
+        padding-left: 66px;
+      }
+
+      &__mail {
+        background: url("../img/icons/Mail.svg") 20px 50% no-repeat;
+        padding-left: 66px;
+      }
+
+      &__theme {
+        background: url("../img/icons/Theme.svg") 20px 50% no-repeat;
+        padding-left: 66px;
+      }
+
+      &__message {
+        background: url("../img/icons/Message.svg") 20px 22px no-repeat;
+        padding-left: 66px;
+        resize: none;
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-end: 3;
+      }
+    }
+  }
+
+  &__btn {
+    padding: 24px 40px;
+    margin-top: 16px;
+  }
+}
