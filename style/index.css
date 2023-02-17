@@ -1,14 +1,20 @@
 @import "normalize.css";
 .wrapper {
   width: 100%;
+  margin: 0 auto;
 }
 
 .container {
-  max-width: 1040px;
+  max-width: 1000px;
   padding: 0 20px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
+}
+@media (max-width: 375px) {
+  .container {
+    max-width: 337px;
+  }
 }
 
 .btn {
@@ -31,9 +37,15 @@
   font-size: 60px;
   line-height: 71px;
 }
+@media (max-width: 490px) {
+  .title {
+    font-size: 36px;
+    line-height: 49px;
+  }
+}
 
 .cover {
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.8);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -41,32 +53,73 @@
   right: 0;
 }
 
-.patterns {
+/* .patterns {
   background: url("../img/Patterns.svg") repeat-y;
   background-repeat: repeat-y;
   position: absolute;
-  top: 0;
-  right: -266px;
+  // top: 0;
+  // right: -266px;
+  // right: 0;
+  // bottom: 0;
   z-index: 3;
   height: 100%;
   width: 230px;
-}
+  display: none;
 
+  // overflow: hidden;
+
+  @media (max-width: 375px) {
+    transform: rotate(90deg);
+    right: 0;
+    bottom: 0;
+    display: none;
+  }
+}
+ */
 /* ---------------------------------------- HEADER ------------------------------------------ */
 .header {
   position: relative;
   background: url("../img/background/bg.jpg") center/cover no-repeat;
-  height: 722px;
 }
 .header__body {
   padding: 42px 0 159px 0;
+}
+@media (max-width: 375px) {
+  .header__body {
+    padding: 22px 0 198px 0;
+  }
 }
 .header__row-up {
   margin-bottom: 86px;
   display: flex;
   justify-content: space-between;
 }
-.header__text {
+@media (max-width: 653px) {
+  .header__row-up {
+    display: block;
+    margin-bottom: 40px;
+  }
+}
+.header__logo {
+  display: flex;
+}
+@media (max-width: 653px) {
+  .header__logo {
+    margin-bottom: 20px;
+  }
+}
+.header__logo-img {
+  margin-right: 14px;
+}
+@media (max-width: 375px) {
+  .header__logo-img > img {
+    width: 42px;
+    height: 40px;
+  }
+}
+.header__logo-text {
+  display: flex;
+  align-items: center;
   width: 164px;
   font-family: "Montserrat";
   font-weight: 400;
@@ -74,16 +127,47 @@
   line-height: 21px;
   color: #ffffff;
 }
-.header__lang-btn > button {
+@media (max-width: 375px) {
+  .header__logo-text {
+    font-size: 12px;
+    line-height: 19px;
+  }
+}
+.header__lang-btns {
+  display: flex;
+}
+.header__lang-btns:first-child {
+  margin-left: 0;
+}
+.header__lang-btn {
+  margin-left: 6px;
+}
+.header__lang-btn:first-child {
+  margin-left: 0;
+}
+.header__lang-btn > a button {
   opacity: 0.5;
-  padding: 17.5px 40px;
+  padding: 17.5px 45px;
+}
+@media (max-width: 570px) {
+  .header__lang-btn > a button {
+    font-size: 12px;
+    line-height: 15px;
+    padding: 10px 30px;
+  }
 }
 .header__title {
   color: #ffffff;
-  width: 826px;
+  max-width: 826px;
+  width: 100%;
   margin-bottom: 40px;
 }
-.header__contact-btn > button {
+@media (max-width: 375px) {
+  .header__title {
+    max-width: 335px;
+  }
+}
+.header__contact-btn > a button {
   padding: 24px 40px;
 }
 
@@ -91,6 +175,11 @@
 /* ------------------ ABOUT BLOCK --------------------- */
 .about__body {
   padding: 100px 0;
+}
+@media (max-width: 375px) {
+  .about__body {
+    padding: 70px 0;
+  }
 }
 .about__title {
   text-transform: capitalize;
@@ -106,6 +195,13 @@
   max-width: 1000px;
   width: 100%;
 }
+@media (max-width: 375px) {
+  .about__text {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 28px;
+  }
+}
 
 /* --------------------- DIOCESE BLOCK ----------------------- */
 .diocese {
@@ -115,17 +211,43 @@
 .diocese__body {
   padding: 100px 0;
 }
+@media (max-width: 375px) {
+  .diocese__body {
+    padding: 62px 0;
+  }
+}
 .diocese__title {
   text-transform: capitalize;
   color: #ffffff;
   margin-bottom: 49px;
 }
+@media (max-width: 375px) {
+  .diocese__title {
+    margin-bottom: 30px;
+  }
+}
 .diocese__main {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 1040px) {
+  .diocese__main {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: center;
+  }
+}
+@media (max-width: 713px) {
+  .diocese__main {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 40px;
+  }
 }
 .diocese__item {
-  width: 320px;
+  max-width: 320px;
+  width: 100%;
 }
 .diocese__item-img {
   height: 325px;
@@ -151,29 +273,45 @@
   color: #ffffff;
   opacity: 0.5;
 }
+@media (max-width: 375px) {
+  .diocese__item-subtitle {
+    font-size: 14px;
+    line-height: 28px;
+  }
+}
 
 /* ------------------- GALLERY BLOCK ----------------- */
 .gallery__body {
   padding: 100px 0;
 }
+@media (max-width: 375px) {
+  .gallery__body {
+    padding: 70px 0;
+  }
+}
 .gallery__title {
   color: #000000;
   margin-bottom: 40px;
 }
+@media (max-width: 375px) {
+  .gallery__title {
+    margin-bottom: 30px;
+  }
+}
 .gallery__main {
   display: grid;
-  width: 1000px;
   grid-template-columns: repeat(2, minmax(454px, auto));
   gap: 20px;
 }
-.gallery__item {
-  width: 490px;
-  height: 454px;
+@media (max-width: 1040px) {
+  .gallery__main {
+    grid-template-columns: minmax(320px, auto);
+  }
 }
 .gallery__item > img {
   border-radius: 10px;
+  width: 100%;
 }
-
 /* ------------------------------------------- FOOTER ------------------------------------------- */
 .footer {
   position: relative;
@@ -182,29 +320,91 @@
 .footer__body {
   padding: 100px 0;
 }
+@media (max-width: 375px) {
+  .footer__body {
+    padding: 62px 0;
+  }
+}
 .footer__title {
   color: #fff;
   margin-bottom: 20px;
 }
-.footer__location {
+.footer__info {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 1020px) {
+  .footer__info {
+    display: block;
+  }
+}
+.footer__info-item {
   display: flex;
 }
-.footer__location-icon {
-  margin-right: 28px;
+@media (max-width: 1020px) {
+  .footer__info-item {
+    margin-bottom: 20px;
+  }
 }
-.footer__location-text {
-  display: flex;
-  align-items: center;
+.footer__info-icon {
+  margin-right: 16px;
+}
+.footer__info-icon > img {
+  opacity: 0.5;
+}
+.footer__info-text {
+  opacity: 0.5;
+}
+.footer__info-title {
   font-family: "Montserrat";
   font-weight: 400;
-  font-size: 18px;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+}
+.footer__info-subtitle,
+.footer__info a {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 24px;
   line-height: 32px;
   color: #ffffff;
-  opacity: 0.5;
+}
+@media (max-width: 375px) {
+  .footer__info-subtitle,
+.footer__info a {
+    font-size: 20px;
+  }
+}
+.footer__map {
+  margin-top: 50px;
+}
+@media (max-width: 375px) {
+  .footer__map {
+    margin-top: 20px;
+  }
+}
+.footer__map > img {
+  max-width: 1000px;
+  width: 100%;
+  max-height: 367px;
+  height: 100%;
+  border-radius: 10px;
+}
+@media (max-width: 375px) {
+  .footer__map > img {
+    max-width: 320px;
+    max-height: 259px;
+  }
 }
 
 .form {
   margin-top: 80px;
+}
+@media (max-width: 375px) {
+  .form {
+    margin-top: 70px;
+  }
 }
 .form__title {
   font-family: "Prata";
@@ -220,6 +420,12 @@
   grid-template-rows: 75px 150px;
   gap: 16px;
 }
+@media (max-width: 1020px) {
+  .form__items {
+    grid-template-columns: 1fr;
+    grid-template-rows: 75px 75px 75px 273px;
+  }
+}
 .form__items > .item {
   padding: 22px 20px;
   border: 1px solid #ffffff;
@@ -230,19 +436,19 @@
   color: #ffffff;
 }
 .form__items > .item__name {
-  background: url("../img/icons/Name.svg") 20px 50% no-repeat;
+  background: url("../img/icons/form/Name.svg") 20px 50% no-repeat;
   padding-left: 66px;
 }
 .form__items > .item__mail {
-  background: url("../img/icons/Mail.svg") 20px 50% no-repeat;
+  background: url("../img/icons/form/Mail.svg") 20px 50% no-repeat;
   padding-left: 66px;
 }
-.form__items > .item__theme {
-  background: url("../img/icons/Theme.svg") 20px 50% no-repeat;
+.form__items > .item__topic {
+  background: url("../img/icons/form/Topic.svg") 20px 50% no-repeat;
   padding-left: 66px;
 }
 .form__items > .item__message {
-  background: url("../img/icons/Message.svg") 20px 22px no-repeat;
+  background: url("../img/icons/form/Message.svg") 20px 22px no-repeat;
   padding-left: 66px;
   resize: none;
   grid-column-start: 1;
@@ -250,7 +456,20 @@
   grid-row-start: 2;
   grid-row-end: 3;
 }
+@media (max-width: 1020px) {
+  .form__items > .item__message {
+    grid-column-start: auto;
+    grid-column-end: auto;
+    grid-row-start: auto;
+    grid-row-end: auto;
+  }
+}
 .form__btn {
   padding: 24px 40px;
   margin-top: 16px;
+}
+@media (max-width: 375px) {
+  .form__btn {
+    margin-top: 30px;
+  }
 }/*# sourceMappingURL=index.css.map */
