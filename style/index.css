@@ -111,6 +111,9 @@
 .header__logo-img {
   margin-right: 14px;
 }
+.header__logo-img > img {
+    width: 85px;
+}
 @media (max-width: 375px) {
   .header__logo-img > img {
     width: 42px;
